@@ -1,0 +1,35 @@
+.header {
+    background: beige;
+    padding-bottom: 10px;
+}
+
+.header__wrap {
+    display: flex;
+}
+
+.header__logo {
+    width: 90px;
+    height: 90px;
+    background: darkgray;
+    border: black 1px solid;
+    border-radius: 70px;
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 25px;
+    margin-left: 20px;
+}
+
+.header__title {
+    margin-left: 40px;
+    margin-top: 40px;
+    font-size: 50px;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.header__link {
+    display: block;
+}
