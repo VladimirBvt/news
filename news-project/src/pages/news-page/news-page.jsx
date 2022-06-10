@@ -2,7 +2,7 @@ import "./news-page.css";
 
 export const NewsPage = () => {
   return (
-    <section>
+    <section className="news">
       <h2>Новости</h2>
       <article>
         <h3>Статья 1</h3>
