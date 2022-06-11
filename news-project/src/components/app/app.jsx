@@ -1,19 +1,23 @@
 import "./app.css";
 import { MainPage } from "../../pages/main-page/main-page";
-import { LoginPage } from "../../pages/login-page/login-page";
 import { NewsPage } from "../../pages/news-page/news-page";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { AppRoutes } from "../../const";
+import { LoginPage } from "../../pages/login-page/login-page";
 import { ProfilePage } from "../../pages/profile-page/profile-page";
-import { ErrorMessage } from "../error-message/error-message";
 
 function App() {
   return (
-    <div className="App">
-      <MainPage />
-      <LoginPage />
-      <NewsPage />
-      <ProfilePage />
-      <ErrorMessage />
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<MainPage />} />
+          <Route path={AppRoutes.news} element={<NewsPage />} />
+          <Route path={AppRoutes.login} element={<LoginPage />} />
+          <Route path={AppRoutes.profile} element={<ProfilePage />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
