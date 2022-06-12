@@ -8,6 +8,7 @@ import { ProfilePage } from "../../pages/profile-page/profile-page";
 import { NoPage } from "../no-page/no-page";
 import { Layout } from "../layout/layout";
 import { PrivateRoute } from "../private-route/private-route";
+import "../../store/reducer";
 
 function App() {
   return (
