@@ -1,4 +1,4 @@
-import { createAction } from "@reduxjs/toolkit/src/createAction";
+import { createAction } from "@reduxjs/toolkit";
 
-// флаг авторизации пользователя
+// изменение флага авторизации пользователя
 export const signIn = createAction("login/signIn");
