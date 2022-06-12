@@ -1,11 +1,8 @@
 import "./news-page.css";
-import { Header } from "../../components/header/header";
-import { Footer } from "../../components/footer/footer";
 
 export const NewsPage = () => {
   return (
     <>
-      <Header />
       <section className="news">
         <h2>Новости</h2>
         <article>
@@ -54,7 +51,6 @@ export const NewsPage = () => {
           </p>
         </article>
       </section>
-      <Footer />
     </>
   );
 };

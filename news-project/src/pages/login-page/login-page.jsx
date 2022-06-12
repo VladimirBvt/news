@@ -1,10 +1,8 @@
 import "./login-page.css";
-import { Header } from "../../components/header/header";
 
 export const LoginPage = () => {
   return (
     <>
-      <Header />
       <form className="login-form">
         <h2 className="login-form__title">Login</h2>
         <div className="login-form__username">

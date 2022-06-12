@@ -5,16 +5,29 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AppRoutes } from "../../const";
 import { LoginPage } from "../../pages/login-page/login-page";
 import { ProfilePage } from "../../pages/profile-page/profile-page";
+import { NoPage } from "../no-page/no-page";
+import { Layout } from "../layout/layout";
+import { PrivateRoute } from "../private-route/private-route";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route index element={<MainPage />} />
-          <Route path={AppRoutes.news} element={<NewsPage />} />
-          <Route path={AppRoutes.login} element={<LoginPage />} />
-          <Route path={AppRoutes.profile} element={<ProfilePage />} />
+          <Route path="/" element={<Layout />}>
+            <Route index element={<MainPage />} />
+            <Route path={AppRoutes.news} element={<NewsPage />} />
+            <Route path={AppRoutes.login} element={<LoginPage />} />
+            <Route
+              path={AppRoutes.profile}
+              element={
+                <PrivateRoute>
+                  <ProfilePage />
+                </PrivateRoute>
+              }
+            />
+            <Route path="*" element={NoPage} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>
