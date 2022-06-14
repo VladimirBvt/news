@@ -1,13 +1,22 @@
 import "./login-page.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { signIn } from "../../store/action";
 import { useNavigate } from "react-router-dom";
 import { AppRoutes } from "../../const";
+import { ErrorMessage } from "../../components/error-message/error-message";
 
 export const LoginPage = () => {
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
+
+  /*const selector = useSelector((state) => state);
+  const showError = (isAuth) => {
+    //return isAuth || <ErrorMessage />;
+    if (!isAuth) {
+      return console.log(111);
+    }
+  };*/
 
   return (
     <>
@@ -52,10 +61,12 @@ export const LoginPage = () => {
                 username: usernameInputValue,
               })
             );
-            navigate(AppRoutes.profile);
+            navigate(AppRoutes.main);
+            //showError(selector.authorization);
           }}
         />
       </form>
+      <ErrorMessage />
     </>
   );
 };

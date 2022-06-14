@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { signIn } from "./action";
+import { signIn, signOut } from "./action";
 import { user } from "../mock/mock";
 
 const initialState = {
@@ -7,12 +7,16 @@ const initialState = {
 };
 
 export const reducer = createReducer(initialState, (builder) => {
-  builder.addCase(signIn, (state, action) => {
-    if (
-      user.usernameValidation(action.payload.username) &&
-      user.passwordValidation(action.payload.password)
-    ) {
-      state.authorization = true;
-    }
-  });
+  builder
+    .addCase(signIn, (state, action) => {
+      if (
+        user.usernameValidation(action.payload.username) &&
+        user.passwordValidation(action.payload.password)
+      ) {
+        state.authorization = true;
+      }
+    })
+    .addCase(signOut, (state) => {
+      state.authorization = false;
+    });
 });
