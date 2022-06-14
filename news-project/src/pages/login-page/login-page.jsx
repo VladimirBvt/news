@@ -10,13 +10,7 @@ export const LoginPage = () => {
 
   const navigate = useNavigate();
 
-  /*const selector = useSelector((state) => state);
-  const showError = (isAuth) => {
-    //return isAuth || <ErrorMessage />;
-    if (!isAuth) {
-      return console.log(111);
-    }
-  };*/
+  const selector = useSelector((state) => state);
 
   return (
     <>
@@ -27,6 +21,7 @@ export const LoginPage = () => {
             Username
           </label>
           <input
+            required
             type="text"
             id="userName"
             className="login-form__input-username"
@@ -37,6 +32,7 @@ export const LoginPage = () => {
             Password
           </label>
           <input
+            required
             type="password"
             id="password"
             className="login-form__input-password"
@@ -61,12 +57,9 @@ export const LoginPage = () => {
                 username: usernameInputValue,
               })
             );
-            navigate(AppRoutes.main);
-            //showError(selector.authorization);
           }}
         />
       </form>
-      <ErrorMessage />
     </>
   );
 };
