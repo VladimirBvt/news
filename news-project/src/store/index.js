@@ -1,3 +1,5 @@
-import { createStore } from "redux";
+import { configureStore } from "@reduxjs/toolkit";
+import { reducer } from "./reducer";
 
-export const Store = createStore(rootReducer);
+// инициализация хранилища
+export const store = configureStore({ reducer });

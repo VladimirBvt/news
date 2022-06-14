@@ -1,6 +1,10 @@
 import "./profile-page.css";
+import { useDispatch } from "react-redux";
+import { signOut } from "../../store/action";
 
 export const ProfilePage = () => {
+  const dispatch = useDispatch();
+
   return (
     <>
       <h2 className="profile__title">Профиль</h2>
@@ -11,6 +15,13 @@ export const ProfilePage = () => {
           <div className="profile__surname">Фамилия:</div>
         </div>
       </div>
+      <button
+        onClick={() => {
+          dispatch(signOut());
+        }}
+      >
+        Выйти
+      </button>
     </>
   );
 };

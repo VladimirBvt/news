@@ -1,6 +1,5 @@
 import "./header.css";
 import { AppRoutes } from "../../const";
-//import { LoginPage } from "../../pages/login-page/login-page";
 import { Link } from "react-router-dom";
 
 export const Header = () => {
@@ -9,13 +8,14 @@ export const Header = () => {
       <div className="header__wrap">
         <div className="header__logo">Logo</div>
         <h1 className="header__title">News</h1>
-        <Link
+        {/*<Link
           className="header__button-sign-in"
           to={AppRoutes.login}
           title={AppRoutes.login}
         >
           Войти
-        </Link>
+        </Link>*/}
+        <div> </div>
       </div>
       <nav className="header__nav">
         <Link
