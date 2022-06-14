@@ -9,8 +9,11 @@ import { NoPage } from "../no-page/no-page";
 import { Layout } from "../layout/layout";
 import { PrivateRoute } from "../private-route/private-route";
 import "../../store/reducer";
+import { useSelector } from "react-redux";
 
 function App() {
+  const selector = useSelector((state) => state);
+
   return (
     <>
       <BrowserRouter>
@@ -22,7 +25,7 @@ function App() {
             <Route
               path={AppRoutes.profile}
               element={
-                <PrivateRoute>
+                <PrivateRoute hasAuth={selector.authorization}>
                   <ProfilePage />
                 </PrivateRoute>
               }

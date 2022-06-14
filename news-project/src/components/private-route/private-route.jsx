@@ -1,10 +1,11 @@
 import { Navigate } from "react-router-dom";
 import { AppRoutes } from "../../const";
-import { useSelector } from "react-redux";
+//import { useSelector } from "react-redux";
 
-export const PrivateRoute = ({ children }) => {
-  const selector = useSelector((state) => state);
-  const hasAccess = selector.authorization;
+export const PrivateRoute = ({ children, hasAuth }) => {
+  //const selector = useSelector((state) => state);
+  //const hasAccess = selector.authorization;
+  //const hasAccess = hasAuth;
 
-  return hasAccess ? children : <Navigate to={AppRoutes.login} />;
+  return hasAuth ? children : <Navigate to={AppRoutes.login} />;
 };

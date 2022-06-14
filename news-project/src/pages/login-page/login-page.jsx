@@ -1,9 +1,13 @@
 import "./login-page.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { signIn } from "../../store/action";
+import { useNavigate } from "react-router-dom";
+import { AppRoutes } from "../../const";
 
 export const LoginPage = () => {
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -48,6 +52,7 @@ export const LoginPage = () => {
                 username: usernameInputValue,
               })
             );
+            navigate(AppRoutes.profile);
           }}
         />
       </form>
