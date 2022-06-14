@@ -1,6 +1,10 @@
 import "./login-page.css";
+import { useDispatch, useSelector } from "react-redux";
+import { signIn } from "../../store/action";
 
 export const LoginPage = () => {
+  const dispatch = useDispatch();
+
   return (
     <>
       <form className="login-form">
@@ -9,15 +13,43 @@ export const LoginPage = () => {
           <label className="login-form__label-username" htmlFor="userName">
             Username
           </label>
-          <input type="text" id="userName" />
+          <input
+            type="text"
+            id="userName"
+            className="login-form__input-username"
+          />
         </div>
         <div className="login-form__password">
           <label className="login-form__label-password" htmlFor="password">
             Password
           </label>
-          <input type="password" id="password" />
+          <input
+            type="password"
+            id="password"
+            className="login-form__input-password"
+          />
         </div>
-        <button className="login-form__button">Войти</button>
+        <input
+          type="submit"
+          className="login-form__button"
+          onClick={(event) => {
+            event.preventDefault();
+            const inputPassword = document.querySelector(
+              ".login-form__input-password"
+            );
+            const passwordValue = inputPassword.value;
+            const inputUsername = document.querySelector(
+              ".login-form__input-username"
+            );
+            const usernameInputValue = inputUsername.value;
+            dispatch(
+              signIn({
+                password: passwordValue,
+                username: usernameInputValue,
+              })
+            );
+          }}
+        />
       </form>
     </>
   );
