@@ -18,6 +18,7 @@ const initialState = {
     password: "",
   },
   error: "",
+  isDataLoaded: false,
 };
 
 export const reducer = createReducer(initialState, (builder) => {
@@ -39,6 +40,7 @@ export const reducer = createReducer(initialState, (builder) => {
     })
     .addCase(loadData, (state, action) => {
       state.news = action.payload;
+      state.isDataLoaded = true;
     })
     .addCase(requireAuthorization, (state, action) => {
       state.authorization = action.payload;

@@ -10,10 +10,14 @@ import { Layout } from "../layout/layout";
 import { PrivateRoute } from "../private-route/private-route";
 import "../../store/reducer";
 import { useSelector } from "react-redux";
+import { Preloader } from "../preloader/preloader";
 
 function App() {
-  const selector = useSelector((state) => state);
+  const { authorization, isDataLoaded } = useSelector((state) => state);
 
+  /*if (authorization || !isDataLoaded) {
+    return <Preloader />;
+  }*/
   return (
     <>
       <BrowserRouter>
@@ -25,7 +29,7 @@ function App() {
             <Route
               path={AppRoutes.profile}
               element={
-                <PrivateRoute hasAuth={selector.authorization}>
+                <PrivateRoute hasAuth={authorization}>
                   <ProfilePage />
                 </PrivateRoute>
               }

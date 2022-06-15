@@ -6,4 +6,9 @@ import { createAPI } from "../services/api";
 export const api = createAPI();
 
 // инициализация хранилища
-export const store = configureStore({ reducer });
+//export const store = configureStore({ reducer });
+export const store = configureStore({
+  reducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({ thunk: { extraArgument: api } }),
+});
