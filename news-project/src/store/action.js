@@ -11,3 +11,6 @@ export const loginFormData = createAction("login/loginFormData");
 
 // загрузка данных с сервиса
 export const loadData = createAction("data/loadData");
+
+// изменение флага авторизации с передачей значения
+export const requireAuthorization = createAction("user/requireAuthorization");

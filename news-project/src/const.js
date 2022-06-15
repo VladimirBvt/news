@@ -4,3 +4,9 @@ export const AppRoutes = {
   news: "/news",
   profile: "/profile",
 };
+
+export const APIRout = {
+  data: "/questions",
+  login: "/login",
+  logout: "/logout",
+};
