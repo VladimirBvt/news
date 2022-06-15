@@ -8,7 +8,6 @@ export const ItemNews = () => {
     <>
       {news.map((item) => {
         const { title, text, urlImage, id, author } = item;
-        console.log(item);
 
         return (
           <article className="item-news" key={id}>

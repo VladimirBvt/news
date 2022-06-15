@@ -5,3 +5,6 @@ export const signIn = createAction("login/currentLoginDetails");
 
 // изменение флага авторизации на false при выходе из авторизации
 export const signOut = createAction("profile/signOut");
+
+// запись данных формы входа в store
+export const loginFormData = createAction("login/loginFormData");
