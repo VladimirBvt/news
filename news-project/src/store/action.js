@@ -8,3 +8,6 @@ export const signOut = createAction("profile/signOut");
 
 // запись данных формы входа в store
 export const loginFormData = createAction("login/loginFormData");
+
+// загрузка данных с сервиса
+export const loadData = createAction("data/loadData");

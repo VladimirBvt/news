@@ -1,11 +1,11 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { loginFormData, signIn, signOut } from "./action";
+import { loadData, loginFormData, signIn, signOut } from "./action";
 import { user } from "../mock/mock";
-import { news } from "../mock/mock";
+import { news as questionItems } from "../mock/mock";
 
 const initialState = {
   authorization: false,
-  news,
+  news: questionItems,
   loginForm: {
     username: "",
     password: "",
@@ -28,5 +28,8 @@ export const reducer = createReducer(initialState, (builder) => {
     .addCase(loginFormData, (state, action) => {
       state.loginForm.username = action.payload.username;
       state.loginForm.password = action.payload.password;
+    })
+    .addCase(loadData, (state, action) => {
+      state.news = action.payload;
     });
 });
