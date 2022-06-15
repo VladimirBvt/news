@@ -14,3 +14,6 @@ export const loadData = createAction("data/loadData");
 
 // изменение флага авторизации с передачей значения
 export const requireAuthorization = createAction("user/requireAuthorization");
+
+// действие, которое помещает информацию об ошибке в store
+export const setError = createAction("setError");

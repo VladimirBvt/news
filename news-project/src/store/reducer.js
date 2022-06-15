@@ -3,6 +3,7 @@ import {
   loadData,
   loginFormData,
   requireAuthorization,
+  setError,
   signIn,
   signOut,
 } from "./action";
@@ -16,6 +17,7 @@ const initialState = {
     username: "",
     password: "",
   },
+  error: "",
 };
 
 export const reducer = createReducer(initialState, (builder) => {
@@ -40,5 +42,8 @@ export const reducer = createReducer(initialState, (builder) => {
     })
     .addCase(requireAuthorization, (state, action) => {
       state.authorization = action.payload;
+    })
+    .addCase(setError, (state, action) => {
+      state.error = action.payload;
     });
 });

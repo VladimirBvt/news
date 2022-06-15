@@ -1,9 +1,25 @@
-import "./error-message.css";
+import { useSelector } from "react-redux";
 
 export const ErrorMessage = () => {
-  return (
-    <div className="error-message">
-      Имя пользователя или пароль введены не верно
-    </div>
-  );
+  const { error } = useSelector((state) => state);
+
+  if (error) {
+    return (
+      <div
+        style={{
+          position: "fixed",
+          top: "30px",
+          right: "30px",
+          padding: "10px",
+          backgroundColor: "#d96666",
+          color: "white",
+          borderRadius: "5px",
+        }}
+      >
+        {error}
+      </div>
+    );
+  }
+
+  return null;
 };
