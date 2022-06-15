@@ -21,6 +21,8 @@ export const news = [
       "            Accusantium ad, assumenda atque fugit magnam quas quos rerum soluta\n" +
       "            tempora voluptatum! Dignissimos dolorum, expedita modi nostrum\n" +
       "            pariatur provident sed sequi vero?",
+    urlImage: "#",
+    author: "Author1",
   },
   {
     id: 2,
@@ -30,6 +32,8 @@ export const news = [
       "            Accusantium ad, assumenda atque fugit magnam quas quos rerum soluta\n" +
       "            tempora voluptatum! Dignissimos dolorum, expedita modi nostrum\n" +
       "            pariatur provident sed sequi vero?",
+    urlImage: "#",
+    author: "Author2",
   },
   {
     id: 3,
@@ -39,6 +43,8 @@ export const news = [
       "            Accusantium ad, assumenda atque fugit magnam quas quos rerum soluta\n" +
       "            tempora voluptatum! Dignissimos dolorum, expedita modi nostrum\n" +
       "            pariatur provident sed sequi vero?",
+    urlImage: "#",
+    author: "Author3",
   },
   {
     id: 4,
@@ -48,14 +54,18 @@ export const news = [
       "            Accusantium ad, assumenda atque fugit magnam quas quos rerum soluta\n" +
       "            tempora voluptatum! Dignissimos dolorum, expedita modi nostrum\n" +
       "            pariatur provident sed sequi vero?",
+    urlImage: "#",
+    author: "Author4",
   },
   {
-    id: 4,
-    title: "Новость 4",
+    id: 5,
+    title: "Новость 5",
     text:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
       "            Accusantium ad, assumenda atque fugit magnam quas quos rerum soluta\n" +
       "            tempora voluptatum! Dignissimos dolorum, expedita modi nostrum\n" +
       "            pariatur provident sed sequi vero?",
+    urlImage: "#",
+    author: "Author5",
   },
 ];
