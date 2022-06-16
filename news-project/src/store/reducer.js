@@ -1,10 +1,23 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { signIn, signOut } from "./action";
+import {
+  loadData,
+  loginFormData,
+  requireAuthorization,
+  setError,
+  signIn,
+  signOut,
+} from "./action";
 import { user } from "../mock/mock";
-import { AppRoutes } from "../const";
 
 const initialState = {
   authorization: false,
+  news: [],
+  loginForm: {
+    username: "",
+    password: "",
+  },
+  error: "",
+  isDataLoaded: false,
 };
 
 export const reducer = createReducer(initialState, (builder) => {
@@ -15,10 +28,23 @@ export const reducer = createReducer(initialState, (builder) => {
         user.passwordValidation(action.payload.password)
       ) {
         state.authorization = true;
-        window.location = AppRoutes.main;
       }
     })
     .addCase(signOut, (state) => {
       state.authorization = false;
+    })
+    .addCase(loginFormData, (state, action) => {
+      state.loginForm.username = action.payload.username;
+      state.loginForm.password = action.payload.password;
+    })
+    .addCase(loadData, (state, action) => {
+      state.news = action.payload;
+      state.isDataLoaded = true;
+    })
+    .addCase(requireAuthorization, (state, action) => {
+      state.authorization = action.payload;
+    })
+    .addCase(setError, (state, action) => {
+      state.error = action.payload;
     });
 });

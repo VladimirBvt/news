@@ -1,16 +1,13 @@
 import "./login-page.css";
 import { useDispatch, useSelector } from "react-redux";
-import { signIn } from "../../store/action";
-import { useNavigate } from "react-router-dom";
-import { AppRoutes } from "../../const";
-import { ErrorMessage } from "../../components/error-message/error-message";
+import { loginFormData, signIn } from "../../store/action";
+import { useRef } from "react";
 
 export const LoginPage = () => {
   const dispatch = useDispatch();
 
-  const navigate = useNavigate();
-
-  const selector = useSelector((state) => state);
+  const inputPassword = useRef(null);
+  const inputUsername = useRef(null);
 
   return (
     <>
@@ -23,6 +20,7 @@ export const LoginPage = () => {
           <input
             required
             type="text"
+            ref={inputUsername}
             id="userName"
             className="login-form__input-username"
           />
@@ -34,6 +32,7 @@ export const LoginPage = () => {
           <input
             required
             type="password"
+            ref={inputPassword}
             id="password"
             className="login-form__input-password"
           />
@@ -55,6 +54,12 @@ export const LoginPage = () => {
               signIn({
                 password: passwordValue,
                 username: usernameInputValue,
+              })
+            );
+            dispatch(
+              loginFormData({
+                password: inputPassword.value,
+                username: inputUsername.value,
               })
             );
           }}
