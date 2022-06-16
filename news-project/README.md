@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+#Тестовое задание
+Выполнено с использованием шаблона Create React App, а также следующих технологий:
+Redux, Redux-Toolkit, React-Router.
+В данный момент немного не доработано. В процессе...
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
