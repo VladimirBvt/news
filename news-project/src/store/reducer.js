@@ -8,7 +8,6 @@ import {
   signOut,
 } from "./action";
 import { user } from "../mock/mock";
-//import { news } from "../mock/mock";
 
 const initialState = {
   authorization: false,

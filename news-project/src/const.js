@@ -8,7 +8,8 @@ export const AppRoutes = {
 
 // пути используемого api
 export const APIRout = {
-  data: "/questions",
+  data: "/posts",
+  photos: "/photos",
   login: "/login",
   logout: "/logout",
 };
@@ -22,3 +23,6 @@ export const HTTP_CODE = {
   UNAUTHORIZED: 401,
   NOT_FOUND: 400,
 };
+
+// индекс конечного элемента массива
+export const INDEX_END = 10;

@@ -9,7 +9,7 @@ export const signOut = createAction("profile/signOut");
 // запись данных формы входа в store
 export const loginFormData = createAction("login/loginFormData");
 
-// загрузка данных с сервиса
+// загрузка текстовых данных с сервера в store
 export const loadData = createAction("data/loadData");
 
 // изменение флага авторизации с передачей значения

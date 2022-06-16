@@ -11,6 +11,7 @@ import { errorHandle } from "../services/error-handle";
 // действие получения данных с сервера
 export const fetchDataAction = createAsyncThunk("data/fetchData", async () => {
   try {
+    //const { data } = await api.get(APIRout.data);
     const { data } = await api.get(APIRout.data);
     store.dispatch(loadData(data));
   } catch (error) {
